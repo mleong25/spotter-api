@@ -1,0 +1,48 @@
+{
+  "name": "spotter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "postinstall": "npm run build",
+    "start": "NODE_ENV=development nodemon -e ts,yaml ./src/index.ts | pino-pretty --singleLine",
+    "start:prod": "NODE_ENV=production node ./build/index.js",
+    "lint": "prettier --check 'src/**/*.{js,jsx,ts,tsx}'",
+    "lint:fix": "prettier --single-quote --jsx-single-quote --trailing-comma all --print-width 120 --write 'src/**/*.{js,jsx,ts,tsx}'"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/body-parser": "^1.19.2",
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/express-pino-logger": "^4.0.3",
+    "eslint": "^8.5.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.3",
+    "express-pino-logger": "^7.0.0",
+    "node-fetch": "^2.6.9",
+    "nodemon": "^2.0.15",
+    "pino": "^7.6.0",
+    "pino-pretty": "^7.5.0",
+    "prettier": "2.6.2",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.2",
+    "express-validator": "^6.14.0",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.21",
+    "mongoose": "^6.0.14",
+    "mongoose-encryption": "^2.1.2"
+  }
+}
